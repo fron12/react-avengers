@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AvengersList from './components/AvengersList';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      avengers: [{name: 'Thor'}, {name: 'SpiderMan'}, {name: 'Iron-Man'}, 
-      {name: 'Dr. Strange'}, {name: 'Hulk'}, {name: 'Captain-America'}, 
-      {name: 'Black-Widow'}
+      avengers: [
+        {id: 1, name: 'Thor', location: 'Danger Zone'}, 
+        {id: 2, name: 'SpiderMan', location: 'Danger Zone'}, 
+        {id: 3, name: 'Iron-Man', location: 'Danger Zone'}, 
+      {id: 4, name: 'Dr. Strange', location: 'Danger Zone'}, 
+      {id: 5, name: 'Hulk', location: 'Danger Zone'}, 
+      {id: 6, name: 'Captain-America', location: 'Danger Zone'}, 
+      {id: 7, name: 'Black-Widow', location: 'Danger Zone'}
       ]
     }
   }
@@ -19,7 +25,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Avengers: by Fred Sohn</h1>
         </header>
-        {this.state.avengers.map(avenger => <div key={avenger.name}>{avenger.name}</div>)}
+        <AvengersList avengers={this.state.avengers} />
       </div>
     );
   }
